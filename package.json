@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "Full-Stack Real-Time Collaboration and Task Management Platform using MERN Stack, TypeScript, and Socket.IO",
   "scripts": {
-    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "npm.cmd --prefix server run dev",
-    "dev:client": "npm.cmd --prefix client run dev",
-    "build:server": "npm.cmd --prefix server run build",
-    "build:client": "npm.cmd --prefix client run build",
-    "build": "npm run build:server && npm run build:client",
-    "start": "npm.cmd --prefix server run start"
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "build:client": "npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build": "npm run install:all && npm run build:client && npm run build:server",
+    "start": "node server/dist/index.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
-  "author": "Ayush",
+  "author": "Ayush Mishra",
   "license": "MIT"
 }

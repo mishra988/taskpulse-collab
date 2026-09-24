@@ -3,6 +3,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
 import { connectDB } from './config/db.js';
 import { registerSocketHandlers } from './sockets/socketHandlers.js';
 import authRoutes from './routes/authRoutes.js';
@@ -48,6 +50,28 @@ app.get('/api/health', (req, res) => {
     service: 'TaskFlow Real-Time Collaboration API',
   });
 });
+
+// Serve frontend static build when available (Production deployment on Render)
+const getClientDistPath = (): string => {
+  const possiblePaths = [
+    path.resolve(process.cwd(), 'client/dist'),
+    path.resolve(process.cwd(), '../client/dist'),
+  ];
+  return possiblePaths.find((p) => fs.existsSync(p)) || possiblePaths[0];
+};
+
+const clientDistPath = getClientDistPath();
+if (fs.existsSync(clientDistPath)) {
+  console.log(`📦 Serving production client from: ${clientDistPath}`);
+  app.use(express.static(clientDistPath));
+
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
 
 // Register real-time Socket.IO events
 registerSocketHandlers(io);
