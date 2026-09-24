@@ -1,0 +1,19 @@
+{
+  "name": "taskpulse-realtime-platform",
+  "version": "1.0.0",
+  "description": "Full-Stack Real-Time Collaboration and Task Management Platform using MERN Stack, TypeScript, and Socket.IO",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm.cmd --prefix server run dev",
+    "dev:client": "npm.cmd --prefix client run dev",
+    "build:server": "npm.cmd --prefix server run build",
+    "build:client": "npm.cmd --prefix client run build",
+    "build": "npm run build:server && npm run build:client",
+    "start": "npm.cmd --prefix server run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "author": "Ayush",
+  "license": "MIT"
+}
