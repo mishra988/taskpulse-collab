@@ -1,5 +1,9 @@
 # ⚡ TaskPulse — Real-Time Collaboration & Task Management Platform
 
+> 🚀 **Live Demo:** **[https://taskpulse-collab.onrender.com](https://taskpulse-collab.onrender.com)**
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-taskpulse--collab.onrender.com-00C7B7?style=for-the-badge&logo=render&logoColor=white)](https://taskpulse-collab.onrender.com)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-3178C6?logo=typescript&logoColor=white)](#)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](#)
 [![Node.js](https://img.shields.io/badge/Node.js-24+-339933?logo=node.js&logoColor=white)](#)
