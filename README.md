@@ -8,6 +8,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb&logoColor=white)](#)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/mishra988/taskpulse-collab)
 
 A modern, high-performance, full-stack real-time collaboration and task management platform built with the **MERN Stack**, **TypeScript**, and **Socket.IO**. Designed with instant bidirectional state synchronization, collaborative cursor/presence indicators, interactive Kanban boards, and a resilient data architecture.
 
